@@ -1,0 +1,88 @@
+﻿@model IEnumerable<ProjetoIntegradoIV.Models.Jogador>
+
+@{
+    ViewData["Title"] = "Cadastro";
+}
+
+<h1>Jogadores</h1>
+
+<p>
+    <a asp-action="AddOrEdit">Editar</a>
+</p>
+<table class="table table-hover">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Id)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NomeCamisa)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.posicaoJoga)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.numGolCarreira)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nome)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.AnoNasc)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Idade)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Altura)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Peso)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Salario)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Id)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NomeCamisa)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.posicaoJoga)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.numGolCarreira)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.AnoNasc)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Idade)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Altura)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Peso)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Salario)
+            </td>
+            <td>
+                <a asp-action="AddOrEdit" asp-route-id="@item.Id">Editar</a>
+                <a asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
